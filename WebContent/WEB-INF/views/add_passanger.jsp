@@ -9,6 +9,24 @@
 <body>
    <h2>Welcome to World Airlines</h2>
    
+   <% if (request.getAttribute("errors")!=null) { 
+   %>
+   <fieldset>
+   		<legend>Errors</legend>
+   		<ul>
+   			<%if (request.getAttribute("firstname_error")!=null) { %>
+   				<li class="error">First Name Error</li>
+   			<% } %>
+   			<%if (request.getAttribute("lastname_error")!=null) { %>
+   				<li class="error">Last Name Error</li>
+   			<% } %>
+   			<%if (request.getAttribute("birthday_error")!=null) { %>
+   				<li class="error">BirthDay Format Error</li>
+   			<% } %>
+   		</ul>
+   </fieldset>
+   <% } %>
+   
    <div class="container">
 	   <form action="AddPassanger" method="post">
 	     <div class="inputField">
